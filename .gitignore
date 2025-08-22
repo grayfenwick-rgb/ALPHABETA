@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+node_modules/
+.next/
+.env*
+out/
+coverage/
+.DS_Store
+npm-debug.log
+
+=======
+node_modules/
+.next/
+.env*
+out/
+coverage/
+.DS_Store
+npm-debug.log
+
+>>>>>>> ffee54565313e6c582194a584a21b586b60de224
