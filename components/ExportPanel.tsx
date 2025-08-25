@@ -1,37 +1,22 @@
-<<<<<<< HEAD
 'use client';
 import React from 'react';
 
-export default function ExportPanel({
-  onExportImage,
-  onExportModel
-}:{
-  onExportImage: ()=>void,
-  onExportModel: ()=>void
-}) {
+export default function ExportPanel({ darkMode }: { darkMode?: boolean }) {
   return (
-    <div style={{display:'flex',gap:16,alignItems:'center'}}>
-      <button className="select" onClick={onExportImage}>🖼 Export Image</button>
-      <button className="select" onClick={onExportModel}>📦 Export Model</button>
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        background: darkMode ? '#292933' : '#fff',
+        color: darkMode ? '#ffe066' : '#222',
+        padding: 18,
+        boxSizing: 'border-box',
+        pointerEvents: 'auto',
+        transition: 'background 0.2s, color 0.2s',
+      }}
+    >
+      <h4 style={{ marginTop: 0 }}>Export Panel</h4>
+      <p>This is the ExportPanel component.</p>
     </div>
   );
 }
-=======
-'use client';
-import React from 'react';
-
-export default function ExportPanel({
-  onExportImage,
-  onExportModel
-}:{
-  onExportImage: ()=>void,
-  onExportModel: ()=>void
-}) {
-  return (
-    <div style={{display:'flex',gap:16,alignItems:'center'}}>
-      <button className="select" onClick={onExportImage}>🖼 Export Image</button>
-      <button className="select" onClick={onExportModel}>📦 Export Model</button>
-    </div>
-  );
-}
->>>>>>> ffee54565313e6c582194a584a21b586b60de224

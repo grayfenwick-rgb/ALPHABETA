@@ -1,105 +1,22 @@
-<<<<<<< HEAD
 'use client';
-import React, { useRef } from 'react';
+import React from 'react';
 
-export default function PresetPanel({
-  presets,
-  onLoad,
-  onSave
-}: {
-  presets: { name?: string; [key: string]: any }[],
-  onLoad: (p: any) => void,
-  onSave: (name: string) => void
-}) {
-  const inp = useRef<HTMLInputElement>(null);
-
+export default function PresetPanel({ darkMode }: { darkMode?: boolean }) {
   return (
-    <div>
-      <h3>Presets</h3>
-      <div style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-        <input
-          ref={inp}
-          placeholder="Preset name"
-          className="select"
-          style={{ width: 140 }}
-        />
-        <button
-          className="select"
-          onClick={() => {
-            if (inp.current?.value) {
-              onSave(inp.current.value);
-              inp.current.value = '';
-            }
-          }}
-        >
-          💾 Save Current
-        </button>
-      </div>
-      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-        {presets.map((p, i) => (
-          <button
-            className="select"
-            key={i}
-            onClick={() => onLoad(p)}
-            style={{ minWidth: 88 }}
-          >
-            {p.name || `Preset #${i + 1}`}
-          </button>
-        ))}
-      </div>
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        background: darkMode ? '#292933' : '#fff',
+        color: darkMode ? '#ffe066' : '#222',
+        padding: 18,
+        boxSizing: 'border-box',
+        pointerEvents: 'auto',
+        transition: 'background 0.2s, color 0.2s',
+      }}
+    >
+      <h4 style={{ marginTop: 0 }}>Preset Panel</h4>
+      <p>This is the PresetPanel component.</p>
     </div>
   );
 }
-=======
-'use client';
-import React, { useRef } from 'react';
-
-export default function PresetPanel({
-  presets,
-  onLoad,
-  onSave
-}: {
-  presets: { name?: string; [key: string]: any }[],
-  onLoad: (p: any) => void,
-  onSave: (name: string) => void
-}) {
-  const inp = useRef<HTMLInputElement>(null);
-
-  return (
-    <div>
-      <h3>Presets</h3>
-      <div style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-        <input
-          ref={inp}
-          placeholder="Preset name"
-          className="select"
-          style={{ width: 140 }}
-        />
-        <button
-          className="select"
-          onClick={() => {
-            if (inp.current?.value) {
-              onSave(inp.current.value);
-              inp.current.value = '';
-            }
-          }}
-        >
-          💾 Save Current
-        </button>
-      </div>
-      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-        {presets.map((p, i) => (
-          <button
-            className="select"
-            key={i}
-            onClick={() => onLoad(p)}
-            style={{ minWidth: 88 }}
-          >
-            {p.name || `Preset #${i + 1}`}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
->>>>>>> ffee54565313e6c582194a584a21b586b60de224

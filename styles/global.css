@@ -1,0 +1,42 @@
+body, html, #__next {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
+  background: #1a1c21;
+  color: #fff;
+}
+.workspaceStudio {
+  background: #1a1c21;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+/* === Desk Object styles (ABC) === */
+.abc-desk-object {
+  position: absolute;
+  width: 96px;
+  image-rendering: auto;
+  cursor: pointer;
+  transition: transform 140ms ease, filter 120ms ease, opacity 150ms ease;
+  will-change: transform, filter, opacity;
+}
+
+.abc-desk-object:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+
+/* subtle peel/reveal animation after click */
+@keyframes abc-peel {
+  0%   { transform: rotateX(0) translateY(0); opacity: 1; }
+  60%  { transform: rotateX(20deg) translateY(-6px); opacity: .7; }
+  100% { transform: rotateX(45deg) translateY(-12px); opacity: 0; }
+}
+
+.abc-peel-out {
+  animation: abc-peel 260ms ease forwards;
+}
