@@ -1,0 +1,10 @@
+node_modules/
+.next/
+__tests__/
+__snapshots__/
+_restore_*/
+_backup_*/
+abc_backups/
+backup_*/
+*.spec.*
+*.test.*

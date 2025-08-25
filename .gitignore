@@ -1,0 +1,8 @@
+.next/ 
+node_modules/ 
+__snapshots__/ 
+_restore_*/ 
+_backup_*/ 
+abc_backups/ 
+backup_*/ 
+*.log
