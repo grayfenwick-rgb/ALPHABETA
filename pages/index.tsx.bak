@@ -1,0 +1,13 @@
+import FloatingPanel from '../components/FloatingPanel';
+'use client';
+import React from 'react';
+import { WorkspaceProvider } from '../context/WorkspaceContext';
+import WorkspaceStudio from '../components/WorkspaceStudio';
+
+export default function Home() {
+  return (
+    <WorkspaceProvider>
+      <WorkspaceStudio />
+    </WorkspaceProvider>
+  );
+}

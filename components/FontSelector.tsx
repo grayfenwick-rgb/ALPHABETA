@@ -1,24 +1,14 @@
+// components/FontSelector.tsx
 'use client';
 import React from 'react';
 
-const FONTS = [
-  { name: "Roboto", file: "/fonts/Roboto-Bold.ttf" },
-  { name: "Lato", file: "/fonts/Lato-Bold.ttf" },
-  { name: "Montserrat", file: "/fonts/Montserrat-Bold.ttf" }
-];
-
-export default function FontSelector({
-  value,
-  onChange,
-}: {
-  value: string,
-  onChange: (font: string) => void
-}) {
+export default function FontSelector() {
   return (
-    <select value={value} onChange={e => onChange(e.target.value)}>
-      {FONTS.map(f => (
-        <option key={f.file} value={f.file}>{f.name}</option>
-      ))}
-    </select>
+    <div style={{ display: 'grid', gap: 8 }}>
+      <label htmlFor="font_select">Font</label>
+      <select id="font_select" style={{ background: '#11141b', color: '#e7e9f2', border: '1px solid #2f3240', padding: 6 }}>
+        <option>Helvetiker</option>
+      </select>
+    </div>
   );
 }
