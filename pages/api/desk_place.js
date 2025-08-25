@@ -12,6 +12,6 @@ export default async function handler(req, res) {
     registry = JSON.parse(fs.readFileSync(regPath, 'utf-8'));
   }
   registry.push(object);
-  fs.writeFileSync(regPath, JSON.stringify(registry, None, 2), 'utf-8');
+  fs.writeFileSync(regPath, JSON.stringify(registry, null, 2), 'utf-8');
   res.status(200).json({ ok: true });
 }

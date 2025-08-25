@@ -51,7 +51,6 @@ export default function DeskCovers() {
           style={{ bottom: 110, left: 230, zIndex: 5 }}
         />
       )}
-      )}
-    </>
+</>
   );
 }

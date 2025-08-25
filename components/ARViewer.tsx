@@ -1,9 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import { Canvas, useLoader } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text3D } from '@react-three/drei';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-
 /** Only include fonts that exist in /public/fonts */
 const FONTS = [
   { label: 'Helvetiker', url: '/fonts/helvetiker_regular.typeface.json' },
@@ -37,9 +35,7 @@ function text_mesh({
   flip_xy: [number, number];
 }) {
   // load font (no try/catch around hooks)
-  const font_data = useLoader(FontLoader, font_url);
-
-  // clamp geometry values
+    // clamp geometry values
   const safe_extrude = Math.max(0.01, extrude_height);
   const safe_bevel   = Math.max(0, bevel_size);
   const safe_scale   = [
@@ -50,7 +46,7 @@ function text_mesh({
 
   return (
     <Text3D
-      font={font_data as unknown as string}
+      font={font_url}
       size={1}
       height={safe_extrude}
       bevelEnabled
